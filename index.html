@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <meta
+      name="description"
+      content="Responsive weather dashboard with current conditions and 7-day forecast."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">☼</div>
+          <div>
+            <p class="eyebrow">Weather</p>
+            <h1>Forecast</h1>
+          </div>
+        </div>
+
+        <form id="search-form" class="search-form" autocomplete="off">
+          <label class="sr-only" for="city-input">Search city</label>
+          <input
+            id="city-input"
+            type="text"
+            placeholder="Search city or town"
+            aria-label="Search city"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </header>
+
+      <main class="dashboard">
+        <section class="hero-panel card">
+          <div class="hero-copy">
+            <p id="location-name" class="location-name">Loading...</p>
+            <p id="current-date" class="current-date"></p>
+            <div class="temp-row">
+              <span id="current-temp" class="current-temp">--°</span>
+              <span id="weather-condition" class="weather-condition">--</span>
+            </div>
+            <p id="feels-like" class="feels-like">Feels like --°</p>
+          </div>
+
+          <div class="hero-icon-wrap">
+            <div id="weather-icon" class="weather-icon" aria-live="polite">--</div>
+          </div>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card card">
+            <span class="stat-label">Humidity</span>
+            <strong id="humidity">--</strong>
+          </article>
+          <article class="stat-card card">
+            <span class="stat-label">Wind</span>
+            <strong id="wind-speed">--</strong>
+          </article>
+          <article class="stat-card card">
+            <span class="stat-label">Rain chance</span>
+            <strong id="rain-chance">--</strong>
+          </article>
+          <article class="stat-card card">
+            <span class="stat-label">Sunrise</span>
+            <strong id="sunrise">--</strong>
+          </article>
+        </section>
+
+        <section class="forecast-panel card">
+          <div class="panel-head">
+            <h2>7-Day Forecast</h2>
+            <button id="use-location-btn" class="ghost-button" type="button">
+              Use my location
+            </button>
+          </div>
+          <div id="forecast-list" class="forecast-list" aria-live="polite"></div>
+        </section>
+
+        <section class="hourly-panel card">
+          <div class="panel-head">
+            <h2>Next 8 hours</h2>
+          </div>
+          <div id="hourly-list" class="hourly-list" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
